@@ -1,0 +1,61 @@
+
+
+
+<body>
+	<!-- Main Content -->
+	<div class="container-fluid">
+		<div class="row main-content bg-success text-center">
+			<div class="col-md-4 text-center company__info">
+				<span class="company__logo"><h2><span class="fa fa-android"></span></h2></span>
+				<h4 class="company_title"><img src="../../assets/Image/aa.png" alt=""></h4>
+			</div>
+            
+			<div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+                <div class="container-fluid">
+					<div class="row">
+						<h2 style="color: rgb(0, 0, 0);">Log In</h2>
+					</div>
+					<div class="row">
+						<form control="" class="form-group" [formGroup]="loginForm">
+							<div class="row">
+								<input formControlName="uname" type="text" name="username" id="username" class="form__input" placeholder="Username" name="uname">
+							</div>
+                            <div  style="color: red; margin-left:60px; text-decoration: underline; "   *ngIf="this.loginForm.get('uname')?.errors && this.loginForm.get('uname')?.touched">
+                                invalid username
+                            </div>
+                            <div class="row">
+								<input formControlName="phno" type="text" name="username" id="username" class="form__input" placeholder="Phone number" name="uname">
+
+							</div>
+                            <div   style="color: red; margin-left:60px; text-decoration: underline; "   *ngIf="this.loginForm.get('phno')?.errors && this.loginForm.get('phno')?.touched">
+                                invalid phone number
+                            </div>
+							<div class="row">
+								<!-- <span class="fa fa-lock"></span> -->
+								<input formControlName="pswd" type="password" name="password" name="pswd" id="password" class="form__input" placeholder="Password">
+							</div>
+                            <div  style="color: red; margin-left:60px; text-decoration: underline; "   *ngIf="this.loginForm.get('pswd')?.errors && this.loginForm.get('pswd')?.touched">
+                                invalid password
+                            </div>
+
+
+                            
+							<div class="row">
+								<input type="checkbox" name="remember_me" id="remember_me" class="">
+								<label for="remember_me">Remember Me!</label>
+							</div>
+							<div id="ro1" class="row">
+								<input id="1"  type="submit" value="Submit" class="btn" (click)="register()">
+							</div>
+						</form>
+					</div>
+					<div class="row">
+						<p>Don't have an account? <a style="color: black;" routerLink="/register">Register Here</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer -->
+</body>
+

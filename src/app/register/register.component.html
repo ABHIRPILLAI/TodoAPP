@@ -1,0 +1,58 @@
+<body>
+    
+
+    <div id="c1" class="container">
+        <div class="row">
+          <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+              <div class="card-img-left d-none d-md-flex">
+                <!-- Background image for card set in CSS! -->
+              </div>
+              <div class="card-body p-4 p-sm-5">
+                <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
+                <form  [formGroup]="registerForm" >
+    
+                  <div class="form-floating mb-3">
+                    <input formControlName="uname" type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" name="uname" required autofocus>
+                    <label for="floatingInputUsername">Username</label>
+                  </div>
+                  <div  style="color: red; margin-left:60px; text-decoration: underline; "   *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched">
+                    invalid username
+                </div>
+    
+                  <div class="form-floating mb-3">
+                    <input formControlName="phno" type="email" class="form-control" id="floatingInputEmail" name="phno" placeholder="name@example.com">
+                    <label for="floatingInputEmail">Phone number</label>
+                  </div>
+                  <div  style="color: red; margin-left:60px; text-decoration: underline; "   *ngIf="this.registerForm.get('phno')?.errors && this.registerForm.get('phno')?.touched">
+                    invalid phone number
+                </div>
+    
+                  <hr>
+    
+                  <div class="form-floating mb-3">
+                    <input formControlName="pswd"  type="password" class="form-control" id="floatingPassword" name="pswd" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  <div  style="color: red; margin-left:60px; text-decoration: underline; "   *ngIf="this.registerForm.get('pswd')?.errors && this.registerForm.get('pswd')?.touched">
+                    invalid password
+                </div>
+    
+                  <div class="d-grid mb-2">
+                    <button id="btn" class="btn btn-lg btn-primary btn-login fw-bold text-uppercase mt-5" (click)="register()" type="submit">Register</button>
+                  </div>
+    
+                  <a class="d-block text-center mt-2 small" routerLink="" style="color: black;">Have an account? Sign In</a>
+    
+                  <hr class="my-4">
+    
+    
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+    
+    
